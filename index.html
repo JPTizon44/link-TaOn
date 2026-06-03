@@ -3,248 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaOn - Link na Bio</title>
-    <meta name="description" content="Leve sua loja física para o digital. Criamos sites personalizados de alta performance para destacar o seu negócio. Fale conosco ou conheça nossos modelos.">
-    <!-- Google Fonts: Outfit (títulos) e Inter (corpo) -->
+    <title>TaOn Burguer - Delivery Interativo</title>
+    <meta name="description" content="Demonstração interativa de carrinho e checkout via WhatsApp desenvolvida por TaOn Digital.">
+    <!-- Google Fonts: Outfit e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Efeitos de iluminação de fundo (Glows) -->
-    <div class="bg-glow bg-glow-1"></div>
-    <div class="bg-glow bg-glow-2"></div>
-    <div class="bg-glow bg-glow-3"></div>
-
-    <div class="container">
-        <!-- Cabeçalho Principal -->
-        <header class="profile-header">
-            <div class="avatar-container">
-                <img src="logo.png?v=2" alt="TaOn Logo" class="profile-avatar" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80'">
-                <div class="avatar-glow"></div>
+    <div class="app-container">
+        <!-- Cabeçalho da Loja -->
+        <header class="store-header">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <div class="store-logo">🍔</div>
+                <h1 class="store-title">TaOn Burguer</h1>
+                <p class="store-badge">🟢 Aberto • Entrega R$ 5,00</p>
+                <p class="store-desc">Os melhores hambúrgueres artesanais da região, preparados com ingredientes selecionados e entrega super rápida.</p>
             </div>
-            <h1 class="profile-title">TaOn <span class="verified-badge" title="Verificado">✓</span></h1>
-            <p class="profile-username">@taondigital</p>
-            <p class="profile-bio-headline">Tá pronto? TaOn <span class="online-dot" title="Online"></span></p>
-            <p class="profile-bio">
-                Do físico para o digital. Criamos sites e landing pages profissionais e personalizadas para alavancar as vendas do seu negócio.
-            </p>
         </header>
 
-        <!-- Botões de Links -->
-        <main class="links-container">
-            <!-- Botão WhatsApp -->
-            <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20meu%20site%20com%20a%20TaOn." target="_blank" rel="noopener noreferrer" class="link-card highlight" id="link-whatsapp">
-                <div class="link-icon-wrapper">
-                    <!-- WhatsApp SVG Icon -->
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                    </svg>
+        <!-- Menu de Produtos -->
+        <main class="store-menu">
+            <h2 class="menu-section-title">Hambúrgueres Artesanais</h2>
+            
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80" alt="Cheese Salada">
+                    </div>
+                    <div class="product-details">
+                        <h3>Cheese Salada</h3>
+                        <p class="product-desc">Pão brioche selado na manteiga, blend artesanal de 150g, queijo cheddar derretido, alface crespa, tomate fresco e maionese artesanal da casa.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 28,00</span>
+                            <button class="add-btn" data-name="Cheese Salada" data-price="28.00">Adicionar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="link-text">
-                    <span class="link-title">Fale Conosco no WhatsApp</span>
-                    <span class="link-subtitle">Solicite seu orçamento gratuito agora</span>
-                </div>
-                <span class="pulse-indicator"></span>
-            </a>
 
-            <!-- Botão Portfólio (Rolagem Suave) -->
-            <a href="#portfolio" class="link-card" id="link-portfolio">
-                <div class="link-icon-wrapper">
-                    <!-- Monitor/Device SVG Icon -->
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                        <line x1="8" y1="21" x2="16" y2="21"/>
-                        <line x1="12" y1="17" x2="12" y2="21"/>
-                    </svg>
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&auto=format&fit=crop&q=80" alt="Batata Suprema">
+                    </div>
+                    <div class="product-details">
+                        <h3>Batata Suprema</h3>
+                        <p class="product-desc">Porção generosa de batatas fritas super crocantes cobertas com um cremoso creme de queijo cheddar e pedacinhos de bacon crocante.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 22,00</span>
+                            <button class="add-btn" data-name="Batata Suprema" data-price="22.00">Adicionar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="link-text">
-                    <span class="link-title">Ver Nossos Modelos de Sites</span>
-                    <span class="link-subtitle">Inspire-se com demonstrações interativas</span>
-                </div>
-                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
 
-
-            <!-- Botão E-mail -->
-            <a href="mailto:taondigital@outlook.com" class="link-card" id="link-email">
-                <div class="link-icon-wrapper">
-                    <!-- Mail SVG Icon -->
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
-                    </svg>
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&auto=format&fit=crop&q=80" alt="Coca-Cola Lata">
+                    </div>
+                    <div class="product-details">
+                        <h3>Coca-Cola Lata</h3>
+                        <p class="product-desc">Refrigerante Coca-Cola lata 350ml trincando de gelada para acompanhar seu hambúrguer artesanal.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 6,00</span>
+                            <button class="add-btn" data-name="Coca-Cola Lata" data-price="6.00">Adicionar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="link-text">
-                    <span class="link-title">E-mail Comercial</span>
-                    <span class="link-subtitle">taondigital@outlook.com</span>
-                </div>
-                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
+            </div>
         </main>
 
-
-        <!-- Seção de Portfólio Interativo -->
-        <section id="portfolio" class="portfolio-section">
-            <h2 class="section-title">Demonstrações Interativas</h2>
-            <p class="section-description">Selecione uma categoria abaixo para ver como ficará o site da sua empresa no celular:</p>
-            
-            <!-- Abas de Categoria (Tabs) -->
-            <div class="portfolio-tabs">
-                <button class="tab-btn active" data-target="hamburgueria">
-                    <span class="tab-icon">🍔</span>Lanches (Demonstração Realista)
-                </button>
-                <button class="tab-btn" data-target="restaurante">
-                    <span class="tab-icon">🍕</span>Restaurante
-                </button>
-                <button class="tab-btn" data-target="moda">
-                    <span class="tab-icon">🛍️</span>Moda
-                </button>
-                <button class="tab-btn" data-target="petshop">
-                    <span class="tab-icon">🐾</span>Petshop
-                </button>
-                <button class="tab-btn" data-target="celular">
-                    <span class="tab-icon">📱</span>Serviços
-                </button>
-            </div>
-
-            <!-- Visualizador de Celular Mockup -->
-            <div class="phone-mockup-wrapper">
-                <div class="phone-mockup">
-                    <div class="phone-speaker"></div>
-                    <div class="phone-camera"></div>
-                    <div class="phone-screen">
-                        <!-- Modelos de Portfólio (iFrames Interativos) -->
-                        <div class="screen-content active" id="hamburgueria" style="position: relative;">
-                            <div class="demo-badge-overlay">Loja Teste</div>
-                            <iframe src="loja-demo/index.html" class="portfolio-iframe" title="Modelo Hamburgueria"></iframe>
-                        </div>
-                        <div class="screen-content" id="restaurante">
-                            <iframe src="demo-restaurante.html" class="portfolio-iframe" title="Modelo Restaurante"></iframe>
-                        </div>
-                        <div class="screen-content" id="moda">
-                            <iframe src="demo-moda.html" class="portfolio-iframe" title="Modelo Moda"></iframe>
-                        </div>
-                        <div class="screen-content" id="petshop">
-                            <iframe src="demo-petshop.html" class="portfolio-iframe" title="Modelo Petshop"></iframe>
-                        </div>
-                        <div class="screen-content" id="celular">
-                            <iframe src="demo-celular.html" class="portfolio-iframe" title="Modelo Serviços"></iframe>
-                        </div>
-                    </div>
-                    <div class="phone-home-indicator"></div>
+        <!-- Barra de Rodapé do Carrinho -->
+        <div class="cart-bar" id="cart-bar">
+            <div class="cart-bar-content">
+                <div class="cart-info">
+                    <span class="cart-icon">🛒</span>
+                    <span id="cart-qty">0 itens</span>
+                    <span class="divider">|</span>
+                    <span id="cart-total-preview">R$ 0,00</span>
                 </div>
-                
-                <!-- Detalhes do Modelo Ativo -->
-                <div class="model-info-card">
-                    <div class="model-info active" data-model="hamburgueria">
-                        <h3>Site Hamburgueria & Delivery (Demonstração Realista)</h3>
-                        <p>Perfeito para lanchonetes e fast-food. Cardápio online dinâmico, integração direta com WhatsApp para pedidos e layout irresistível.</p>
-                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Hamburgueria%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Lanches!</a>
+                <button class="view-cart-btn" id="btn-view-cart">Ver Sacola</button>
+            </div>
+        </div>
+
+        <!-- Painel de Checkout / Sacola (Slide Up) -->
+        <div class="checkout-panel" id="checkout-panel">
+            <div class="checkout-container">
+                <header class="checkout-header">
+                    <h2>Sua Sacola</h2>
+                    <button class="close-btn" id="btn-close-checkout">×</button>
+                </header>
+
+                <div class="checkout-body">
+                    <!-- Lista de Itens -->
+                    <div class="order-items-list" id="order-items-list">
+                        <!-- Preenchido dinamicamente via JS -->
                     </div>
-                    <div class="model-info" data-model="restaurante">
-                        <h3>Site Restaurante & Bistrô</h3>
-                        <p>Para restaurantes que buscam sofisticação. Reservas de mesa online, cardápio completo, localização e atmosfera premium na web.</p>
-                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Restaurante%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Restaurante!</a>
+
+                    <!-- Resumo Financeiro -->
+                    <div class="price-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="summary-subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Taxa de Entrega:</span>
+                            <span>R$ 5,00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total a Pagar:</span>
+                            <span id="summary-total">R$ 5,00</span>
+                        </div>
                     </div>
-                    <div class="model-info" data-model="moda">
-                        <h3>Site Boutique & Moda</h3>
-                        <p>Ideal para lojas de roupas, calçados e acessórios. Catálogo elegante, focado em imagens de alta qualidade e integração com checkout rápido.</p>
-                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Moda%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Moda!</a>
-                    </div>
-                    <div class="model-info" data-model="petshop">
-                        <h3>Site Petshop & Clínica</h3>
-                        <p>Pensado para clínicas veterinárias e petshops. Agendamento de banho/tosa, exibição de serviços e venda de produtos pets de forma simples.</p>
-                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Petshop%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Petshop!</a>
-                    </div>
-                    <div class="model-info" data-model="celular">
-                        <h3>Site Serviços & Assistência</h3>
-                        <p>Ideal para prestadores de serviço e lojas de eletrônicos. Destaque para serviços realizados, formulário de orçamento rápido e suporte ao cliente.</p>
-                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Servi%C3%A7os/Celular%20e%20gostaria%20de%20um%20parecido." target="_blank" class="model-cta">Quero um Site de Serviços!</a>
-                    </div>
+
+                    <!-- Formulário de Entrega e Pagamento -->
+                    <form class="checkout-form" id="order-form">
+                        <h3>Dados de Entrega</h3>
+                        <div class="input-group">
+                            <label for="cust-name">Seu Nome *</label>
+                            <input type="text" id="cust-name" placeholder="Ex: João da Silva" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cust-phone">WhatsApp para Contato *</label>
+                            <input type="tel" id="cust-phone" placeholder="Ex: 42 99999-9999" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="delivery-type">Tipo de Entrega *</label>
+                            <select id="delivery-type" required>
+                                <option value="delivery" selected>Delivery (Receber em Casa)</option>
+                                <option value="pickup">Retirar no Balcão (Sem taxa)</option>
+                            </select>
+                        </div>
+
+                        <div class="address-fields" id="address-fields">
+                            <div class="input-group">
+                                <label for="cust-address">Endereço Completo *</label>
+                                <div class="address-input-wrapper">
+                                    <input type="text" id="cust-address" placeholder="Rua, número, apartamento..." required>
+                                    <button type="button" class="gps-btn" id="btn-gps" title="Usar minha localização atual">📍 Usar GPS</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="cust-neighborhood">Bairro *</label>
+                                <input type="text" id="cust-neighborhood" placeholder="Ex: Centro" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="cust-reference">Ponto de Referência</label>
+                                <input type="text" id="cust-reference" placeholder="Ex: Próximo à farmácia...">
+                            </div>
+                        </div>
+
+                        <h3>Forma de Pagamento</h3>
+                        <div class="input-group">
+                            <label for="cust-payment">Selecione como quer pagar *</label>
+                            <select id="cust-payment" required>
+                                <option value="" disabled selected>Escolha a forma...</option>
+                                <option value="Pix">Pix (Pague e envie o comprovante)</option>
+                                <option value="Cartão de Crédito na Entrega">Cartão de Crédito na Entrega</option>
+                                <option value="Cartão de Débito na Entrega">Cartão de Débito na Entrega</option>
+                                <option value="Dinheiro">Dinheiro (Em espécie)</option>
+                            </select>
+                        </div>
+
+                        <div class="change-field" id="change-field" style="display: none;">
+                            <div class="input-group">
+                                <label for="cust-change">Troco para quanto?</label>
+                                <input type="number" id="cust-change" placeholder="Ex: 50" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-order-btn">
+                            <span>Confirmar e Enviar no WhatsApp</span>
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
 
-
-        <!-- Rodapé -->
-        <footer class="main-footer">
-            <p>TaOn Digital • Conectando sua empresa ao mundo</p>
-            <p class="copyright">© 2026 TaOn. Todos os direitos reservados.</p>
-        </footer>
+        <!-- Crédito Institucional TaOn -->
+        <div class="demo-credit">
+            <p>Demonstração criada por <strong>TaOn Digital</strong> • Todos os direitos reservados.</p>
+        </div>
     </div>
 
-    <!-- Script para controle do Portfólio -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.tab-btn');
-            const screens = document.querySelectorAll('.screen-content');
-            const infos = document.querySelectorAll('.model-info');
+            const cart = [];
+            const cartBar = document.getElementById('cart-bar');
+            const cartQty = document.getElementById('cart-qty');
+            const cartTotalPreview = document.getElementById('cart-total-preview');
+            const btnViewCart = document.getElementById('btn-view-cart');
+            const checkoutPanel = document.getElementById('checkout-panel');
+            const btnCloseCheckout = document.getElementById('btn-close-checkout');
+            
+            const orderItemsList = document.getElementById('order-items-list');
+            const summarySubtotal = document.getElementById('summary-subtotal');
+            const summaryTotal = document.getElementById('summary-total');
+            const deliveryType = document.getElementById('delivery-type');
+            const addressFields = document.getElementById('address-fields');
+            const custAddress = document.getElementById('cust-address');
+            const custNeighborhood = document.getElementById('cust-neighborhood');
+            const custPayment = document.getElementById('cust-payment');
+            const changeField = document.getElementById('change-field');
+            const orderForm = document.getElementById('order-form');
 
-            // Função para ajustar o zoom e tamanho do iframe responsivamente
-            function adjustIframes() {
-                const phoneScreens = document.querySelectorAll('.phone-screen');
-                phoneScreens.forEach(screen => {
-                    const iframes = screen.querySelectorAll('.portfolio-iframe');
-                    iframes.forEach(iframe => {
-                        let screenW = screen.clientWidth;
-                        let screenH = screen.clientHeight;
-                        
-                        // Fallback caso a renderização esteja pendente e retorne 0
-                        if (screenW === 0) {
-                            screenW = screen.offsetWidth || 252;
+            // Controle de GPS
+            let gpsCoordinates = null;
+            const btnGps = document.getElementById('btn-gps');
+
+            if (btnGps) {
+                btnGps.addEventListener('click', () => {
+                    if (!navigator.geolocation) {
+                        alert("Geolocalização não é suportada pelo seu navegador.");
+                        return;
+                    }
+
+                    btnGps.textContent = "Buscando... ⏳";
+                    btnGps.disabled = true;
+
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            gpsCoordinates = { lat, lon };
+
+                            custAddress.value = `Localização via GPS (Link anexado no WhatsApp)`;
+                            custNeighborhood.value = `Detectado por GPS`;
+                            
+                            btnGps.textContent = "Capturado! ✓";
+                            btnGps.classList.add('success');
+                            btnGps.disabled = false;
+                        },
+                        (error) => {
+                            console.error(error);
+                            alert("Não foi possível obter sua localização. Por favor, digite seu endereço manualmente.");
+                            btnGps.textContent = "Erro ❌";
+                            btnGps.disabled = false;
+                        },
+                        { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+                    );
+                });
+            }
+
+            // Toggle Tipo de Entrega
+            deliveryType.addEventListener('change', () => {
+                if (deliveryType.value === 'pickup') {
+                    addressFields.style.display = 'none';
+                    custAddress.removeAttribute('required');
+                    custNeighborhood.removeAttribute('required');
+                } else {
+                    addressFields.style.display = 'block';
+                    custAddress.setAttribute('required', '');
+                    custNeighborhood.setAttribute('required', '');
+                }
+                renderCheckout();
+            });
+
+            // Toggle Troco Dinheiro
+            custPayment.addEventListener('change', () => {
+                if (custPayment.value === 'Dinheiro') {
+                    changeField.style.display = 'block';
+                } else {
+                    changeField.style.display = 'none';
+                }
+            });
+
+            // Adicionar ao carrinho
+            document.querySelectorAll('.add-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const price = parseFloat(btn.getAttribute('data-price'));
+
+                    const existingItem = cart.find(item => item.name === name);
+                    if (existingItem) {
+                        existingItem.qty += 1;
+                    } else {
+                        cart.push({ name, price, qty: 1 });
+                    }
+
+                    btn.textContent = 'Adicionado! ✓';
+                    btn.classList.add('added');
+                    setTimeout(() => {
+                        btn.textContent = 'Adicionar';
+                        btn.classList.remove('added');
+                    }, 1000);
+
+                    updateCartPreview();
+                });
+            });
+
+            function updateCartPreview() {
+                const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+                const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+                if (totalQty > 0) {
+                    cartQty.textContent = `${totalQty} item(s)`;
+                    cartTotalPreview.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                    cartBar.classList.add('active');
+                } else {
+                    cartBar.classList.remove('active');
+                }
+            }
+
+            // Abrir e Fechar Sacola
+            btnViewCart.addEventListener('click', () => {
+                renderCheckout();
+                checkoutPanel.classList.add('active');
+            });
+
+            btnCloseCheckout.addEventListener('click', () => {
+                checkoutPanel.classList.remove('active');
+            });
+
+            function renderCheckout() {
+                orderItemsList.innerHTML = '';
+                let subtotal = 0;
+
+                cart.forEach((item, index) => {
+                    const totalItemPrice = item.price * item.qty;
+                    subtotal += totalItemPrice;
+
+                    const div = document.createElement('div');
+                    div.className = 'order-item-row';
+                    div.innerHTML = `
+                        <div class="item-name-qty">
+                            <span class="qty">${item.qty}x</span>
+                            <span class="name">${item.name}</span>
+                        </div>
+                        <div class="item-price-actions">
+                            <span class="price">R$ ${totalItemPrice.toFixed(2).replace('.', ',')}</span>
+                            <button type="button" class="remove-btn" data-index="${index}">×</button>
+                        </div>
+                    `;
+                    orderItemsList.appendChild(div);
+                });
+
+                const isDelivery = deliveryType.value === 'delivery';
+                const deliveryFee = isDelivery ? 5.00 : 0.00;
+                const total = subtotal + deliveryFee;
+
+                summarySubtotal.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                summaryTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+                // Configurar botões de remover item
+                document.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        cart.splice(idx, 1);
+                        renderCheckout();
+                        updateCartPreview();
+                        if (cart.length === 0) {
+                            checkoutPanel.classList.remove('active');
                         }
-                        if (screenH === 0) {
-                            screenH = screen.offsetHeight || 500;
-                        }
-                        
-                        // Largura de referência padrão para smartphone (375px)
-                        const virtualW = 375;
-                        const scale = screenW / virtualW;
-                        const virtualH = screenH / scale;
-                        
-                        iframe.style.width = `${virtualW}px`;
-                        iframe.style.height = `${virtualH}px`;
-                        iframe.style.transform = `scale(${scale})`;
-                        iframe.style.transformOrigin = 'top left';
-                        iframe.style.border = 'none';
                     });
                 });
             }
 
-            // Ajusta no carregamento inicial, após carregar tudo e no redimensionamento da janela
-            adjustIframes();
-            window.addEventListener('load', adjustIframes);
-            window.addEventListener('resize', adjustIframes);
-            setTimeout(adjustIframes, 100);
-            setTimeout(adjustIframes, 500);
+            // Envio do Pedido via WhatsApp
+            orderForm.addEventListener('submit', (e) => {
+                e.preventDefault();
 
-            // Controle das Abas da Vitrine
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const target = tab.getAttribute('data-target');
-                    
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    
-                    screens.forEach(screen => {
-                        screen.classList.remove('active');
-                        if(screen.getAttribute('id') === target) {
-                            screen.classList.add('active');
-                        }
-                    });
+                const name = document.getElementById('cust-name').value;
+                const phone = document.getElementById('cust-phone').value;
+                const isDelivery = deliveryType.value === 'delivery';
+                const payment = custPayment.value;
 
-                    infos.forEach(info => {
-                        info.classList.remove('active');
-                        if(info.getAttribute('data-model') === target) {
-                            info.classList.add('active');
-                        }
-                    });
+                let itemsText = '';
+                let subtotal = 0;
 
-                    // Recalcula o tamanho após a mudança de aba para evitar quebras
-                    setTimeout(adjustIframes, 50);
+                cart.forEach(item => {
+                    const totalItemPrice = item.price * item.qty;
+                    subtotal += totalItemPrice;
+                    itemsText += `* ${item.qty}x ${item.name} - R$ ${totalItemPrice.toFixed(2).replace('.', ',')}\n`;
                 });
+
+                const deliveryFee = isDelivery ? 5.00 : 0.00;
+                const total = subtotal + deliveryFee;
+
+                let message = `🍔 *NOVO PEDIDO - TAON BURGUER* 🍔\n` +
+                                `----------------------------------\n` +
+                                `👤 *Cliente:* ${name} (${phone})\n` +
+                                `----------------------------------\n` +
+                                `🛒 *Itens do Pedido:*\n${itemsText}` +
+                                `💵 *Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}\n` +
+                                `🛵 *Taxa de Entrega:* R$ ${deliveryFee.toFixed(2).replace('.', ',')}\n` +
+                                `💰 *Total a Pagar:* R$ ${total.toFixed(2).replace('.', ',')}\n` +
+                                `----------------------------------\n` +
+                                `💳 *Forma de Pagamento:* ${payment}\n`;
+
+                if (payment === 'Pix') {
+                    message += `*(Anviarei o comprovante em seguida no chat)*\n`;
+                } else if (payment === 'Dinheiro') {
+                    const change = document.getElementById('cust-change').value;
+                    if (change) {
+                        message += `* *Troco para:* R$ ${parseFloat(change).toFixed(2).replace('.', ',')}\n`;
+                    }
+                }
+
+                message += `----------------------------------\n`;
+
+                if (isDelivery) {
+                    const address = custAddress.value;
+                    const neighborhood = custNeighborhood.value;
+                    const reference = document.getElementById('cust-reference').value;
+                    
+                    message += `📍 *Endereço de Entrega:* \n`;
+                    if (gpsCoordinates) {
+                        message += `* *Como chegar (GPS):* https://www.google.com/maps?q=${gpsCoordinates.lat},${gpsCoordinates.lon}\n`;
+                    } else {
+                        message += `* *Rua:* ${address}\n` +
+                                   `* *Bairro:* ${neighborhood}\n`;
+                    }
+                    if (reference) {
+                        message += `* *Referência:* ${reference}\n`;
+                    }
+                } else {
+                    message += `🏪 *Tipo:* Retirada no Balcão\n`;
+                }
+
+                message += `----------------------------------\n` +
+                           `🔗 _Pedido gerado pelo site TaOn Digital._`;
+
+                const whatsappUrl = `https://wa.me/5542999164041?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // Suporte a arrastar para rolar (drag-to-scroll) no computador
+            let isDown = false;
+            let startY;
+            let scrollTop;
+            window.addEventListener('mousedown', (e) => {
+                const tag = e.target.tagName.toLowerCase();
+                if (tag === 'input' || tag === 'button' || tag === 'select' || tag === 'option' || tag === 'a' || e.target.closest('button') || e.target.closest('a')) {
+                    return;
+                }
+                isDown = true;
+                startY = e.pageY;
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            });
+            window.addEventListener('mouseleave', () => { isDown = false; });
+            window.addEventListener('mouseup', () => { isDown = false; });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                const y = e.pageY;
+                const walk = (y - startY) * 1.5;
+                if (Math.abs(y - startY) > 5) {
+                    e.preventDefault();
+                    window.scrollTo(0, scrollTop - walk);
+                }
             });
         });
     </script>
