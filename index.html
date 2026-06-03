@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaOn - Link na Bio</title>
+    <meta name="description" content="Leve sua loja física para o digital. Criamos sites personalizados de alta performance para destacar o seu negócio. Fale conosco ou conheça nossos modelos.">
+    <!-- Google Fonts: Outfit (títulos) e Inter (corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Efeitos de iluminação de fundo (Glows) -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <div class="container">
+        <!-- Cabeçalho Principal -->
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img src="logo.png?v=2" alt="TaOn Logo" class="profile-avatar" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80'">
+                <div class="avatar-glow"></div>
+            </div>
+            <h1 class="profile-title">TaOn <span class="verified-badge" title="Verificado">✓</span></h1>
+            <p class="profile-username">@taondigital</p>
+            <p class="profile-bio-headline">Tá pronto? TaOn <span class="online-dot" title="Online"></span></p>
+            <p class="profile-bio">
+                Do físico para o digital. Criamos sites e landing pages profissionais e personalizadas para alavancar as vendas do seu negócio.
+            </p>
+        </header>
+
+        <!-- Botões de Links -->
+        <main class="links-container">
+            <!-- Botão WhatsApp -->
+            <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20o%20meu%20site%20com%20a%20TaOn." target="_blank" rel="noopener noreferrer" class="link-card highlight" id="link-whatsapp">
+                <div class="link-icon-wrapper">
+                    <!-- WhatsApp SVG Icon -->
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                    </svg>
+                </div>
+                <div class="link-text">
+                    <span class="link-title">Fale Conosco no WhatsApp</span>
+                    <span class="link-subtitle">Solicite seu orçamento gratuito agora</span>
+                </div>
+                <span class="pulse-indicator"></span>
+            </a>
+
+            <!-- Botão Portfólio (Rolagem Suave) -->
+            <a href="#portfolio" class="link-card" id="link-portfolio">
+                <div class="link-icon-wrapper">
+                    <!-- Monitor/Device SVG Icon -->
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="link-text">
+                    <span class="link-title">Ver Nossos Modelos de Sites</span>
+                    <span class="link-subtitle">Inspire-se com demonstrações interativas</span>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+
+
+            <!-- Botão E-mail -->
+            <a href="mailto:taondigital@outlook.com" class="link-card" id="link-email">
+                <div class="link-icon-wrapper">
+                    <!-- Mail SVG Icon -->
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <div class="link-text">
+                    <span class="link-title">E-mail Comercial</span>
+                    <span class="link-subtitle">taondigital@outlook.com</span>
+                </div>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+        </main>
+
+
+        <!-- Seção de Portfólio Interativo -->
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="section-title">Demonstrações Interativas</h2>
+            <p class="section-description">Selecione uma categoria abaixo para ver como ficará o site da sua empresa no celular:</p>
+            
+            <!-- Abas de Categoria (Tabs) -->
+            <div class="portfolio-tabs">
+                <button class="tab-btn active" data-target="hamburgueria">
+                    <span class="tab-icon">🍔</span>Lanches (Demonstração Realista)
+                </button>
+                <button class="tab-btn" data-target="restaurante">
+                    <span class="tab-icon">🍕</span>Restaurante
+                </button>
+                <button class="tab-btn" data-target="moda">
+                    <span class="tab-icon">🛍️</span>Moda
+                </button>
+                <button class="tab-btn" data-target="petshop">
+                    <span class="tab-icon">🐾</span>Petshop
+                </button>
+                <button class="tab-btn" data-target="celular">
+                    <span class="tab-icon">📱</span>Serviços
+                </button>
+            </div>
+
+            <!-- Visualizador de Celular Mockup -->
+            <div class="phone-mockup-wrapper">
+                <div class="phone-mockup">
+                    <div class="phone-speaker"></div>
+                    <div class="phone-camera"></div>
+                    <div class="phone-screen">
+                        <!-- Modelos de Portfólio (iFrames Interativos) -->
+                        <div class="screen-content active" id="hamburgueria" style="position: relative;">
+                            <div class="demo-badge-overlay">Loja Teste</div>
+                            <iframe src="loja-demo/index.html" class="portfolio-iframe" title="Modelo Hamburgueria"></iframe>
+                        </div>
+                        <div class="screen-content" id="restaurante">
+                            <iframe src="demo-restaurante.html" class="portfolio-iframe" title="Modelo Restaurante"></iframe>
+                        </div>
+                        <div class="screen-content" id="moda">
+                            <iframe src="demo-moda.html" class="portfolio-iframe" title="Modelo Moda"></iframe>
+                        </div>
+                        <div class="screen-content" id="petshop">
+                            <iframe src="demo-petshop.html" class="portfolio-iframe" title="Modelo Petshop"></iframe>
+                        </div>
+                        <div class="screen-content" id="celular">
+                            <iframe src="demo-celular.html" class="portfolio-iframe" title="Modelo Serviços"></iframe>
+                        </div>
+                    </div>
+                    <div class="phone-home-indicator"></div>
+                </div>
+                
+                <!-- Detalhes do Modelo Ativo -->
+                <div class="model-info-card">
+                    <div class="model-info active" data-model="hamburgueria">
+                        <h3>Site Hamburgueria & Delivery (Demonstração Realista)</h3>
+                        <p>Perfeito para lanchonetes e fast-food. Cardápio online dinâmico, integração direta com WhatsApp para pedidos e layout irresistível.</p>
+                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Hamburgueria%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Lanches!</a>
+                    </div>
+                    <div class="model-info" data-model="restaurante">
+                        <h3>Site Restaurante & Bistrô</h3>
+                        <p>Para restaurantes que buscam sofisticação. Reservas de mesa online, cardápio completo, localização e atmosfera premium na web.</p>
+                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Restaurante%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Restaurante!</a>
+                    </div>
+                    <div class="model-info" data-model="moda">
+                        <h3>Site Boutique & Moda</h3>
+                        <p>Ideal para lojas de roupas, calçados e acessórios. Catálogo elegante, focado em imagens de alta qualidade e integração com checkout rápido.</p>
+                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Moda%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Moda!</a>
+                    </div>
+                    <div class="model-info" data-model="petshop">
+                        <h3>Site Petshop & Clínica</h3>
+                        <p>Pensado para clínicas veterinárias e petshops. Agendamento de banho/tosa, exibição de serviços e venda de produtos pets de forma simples.</p>
+                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Petshop%20e%20gostaria%20de%20un%20parecido." target="_blank" class="model-cta">Quero um Site de Petshop!</a>
+                    </div>
+                    <div class="model-info" data-model="celular">
+                        <h3>Site Serviços & Assistência</h3>
+                        <p>Ideal para prestadores de serviço e lojas de eletrônicos. Destaque para serviços realizados, formulário de orçamento rápido e suporte ao cliente.</p>
+                        <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Gostei%20do%20modelo%20de%20Servi%C3%A7os/Celular%20e%20gostaria%20de%20um%20parecido." target="_blank" class="model-cta">Quero um Site de Serviços!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Rodapé -->
+        <footer class="main-footer">
+            <p>TaOn Digital • Conectando sua empresa ao mundo</p>
+            <p class="copyright">© 2026 TaOn. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Script para controle do Portfólio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab-btn');
+            const screens = document.querySelectorAll('.screen-content');
+            const infos = document.querySelectorAll('.model-info');
+
+            // Função para ajustar o zoom e tamanho do iframe responsivamente
+            function adjustIframes() {
+                const phoneScreens = document.querySelectorAll('.phone-screen');
+                phoneScreens.forEach(screen => {
+                    const iframes = screen.querySelectorAll('.portfolio-iframe');
+                    iframes.forEach(iframe => {
+                        let screenW = screen.clientWidth;
+                        let screenH = screen.clientHeight;
+                        
+                        // Fallback caso a renderização esteja pendente e retorne 0
+                        if (screenW === 0) {
+                            screenW = screen.offsetWidth || 252;
+                        }
+                        if (screenH === 0) {
+                            screenH = screen.offsetHeight || 500;
+                        }
+                        
+                        // Largura de referência padrão para smartphone (375px)
+                        const virtualW = 375;
+                        const scale = screenW / virtualW;
+                        const virtualH = screenH / scale;
+                        
+                        iframe.style.width = `${virtualW}px`;
+                        iframe.style.height = `${virtualH}px`;
+                        iframe.style.transform = `scale(${scale})`;
+                        iframe.style.transformOrigin = 'top left';
+                        iframe.style.border = 'none';
+                    });
+                });
+            }
+
+            // Ajusta no carregamento inicial, após carregar tudo e no redimensionamento da janela
+            adjustIframes();
+            window.addEventListener('load', adjustIframes);
+            window.addEventListener('resize', adjustIframes);
+            setTimeout(adjustIframes, 100);
+            setTimeout(adjustIframes, 500);
+
+            // Controle das Abas da Vitrine
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const target = tab.getAttribute('data-target');
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    screens.forEach(screen => {
+                        screen.classList.remove('active');
+                        if(screen.getAttribute('id') === target) {
+                            screen.classList.add('active');
+                        }
+                    });
+
+                    infos.forEach(info => {
+                        info.classList.remove('active');
+                        if(info.getAttribute('data-model') === target) {
+                            info.classList.add('active');
+                        }
+                    });
+
+                    // Recalcula o tamanho após a mudança de aba para evitar quebras
+                    setTimeout(adjustIframes, 50);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

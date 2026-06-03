@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaOn - Petshop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            background-color: #ececee;
+            font-family: sans-serif;
+            overflow-x: hidden;
+            user-select: none;
+            scrollbar-width: none; /* Firefox */
+        }
+        body::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        .container {
+            width: 100%;
+            display: block;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="exemplo site petshop.png" alt="Petshop">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let isDown = false;
+            let startY;
+            let scrollTop;
+
+            window.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startY = e.pageY;
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                document.body.style.cursor = 'grabbing';
+            });
+
+            window.addEventListener('mouseleave', () => {
+                isDown = false;
+                document.body.style.cursor = 'default';
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDown = false;
+                document.body.style.cursor = 'default';
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const y = e.pageY;
+                const walk = (y - startY) * 1.5;
+                window.scrollTo(0, scrollTop - walk);
+            });
+        });
+    </script>
+</body>
+</html>
