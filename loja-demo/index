@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaOn Burguer - Delivery Interativo</title>
+    <meta name="description" content="Demonstração interativa de carrinho e checkout via WhatsApp desenvolvida por TaOn Digital.">
+    <!-- Google Fonts: Outfit e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Cabeçalho da Loja -->
+        <header class="store-header">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <div class="store-logo">🍔</div>
+                <h1 class="store-title">TaOn Burguer</h1>
+                <p class="store-badge">🟢 Aberto • Entrega R$ 5,00</p>
+                <p class="store-desc">Os melhores hambúrgueres artesanais da região, preparados com ingredientes selecionados e entrega super rápida.</p>
+            </div>
+        </header>
+
+        <!-- Menu de Produtos -->
+        <main class="store-menu">
+            <h2 class="menu-section-title">Hambúrgueres Artesanais</h2>
+            
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&auto=format&fit=crop&q=80" alt="Cheese Salada">
+                    </div>
+                    <div class="product-details">
+                        <h3>Cheese Salada</h3>
+                        <p class="product-desc">Pão brioche selado na manteiga, blend artesanal de 150g, queijo cheddar derretido, alface crespa, tomate fresco e maionese artesanal da casa.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 28,00</span>
+                            <button class="add-btn" data-name="Cheese Salada" data-price="28.00">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=400&auto=format&fit=crop&q=80" alt="Batata Suprema">
+                    </div>
+                    <div class="product-details">
+                        <h3>Batata Suprema</h3>
+                        <p class="product-desc">Porção generosa de batatas fritas super crocantes cobertas com um cremoso creme de queijo cheddar e pedacinhos de bacon crocante.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 22,00</span>
+                            <button class="add-btn" data-name="Batata Suprema" data-price="22.00">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&auto=format&fit=crop&q=80" alt="Coca-Cola Lata">
+                    </div>
+                    <div class="product-details">
+                        <h3>Coca-Cola Lata</h3>
+                        <p class="product-desc">Refrigerante Coca-Cola lata 350ml trincando de gelada para acompanhar seu hambúrguer artesanal.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 6,00</span>
+                            <button class="add-btn" data-name="Coca-Cola Lata" data-price="6.00">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Barra de Rodapé do Carrinho -->
+        <div class="cart-bar" id="cart-bar">
+            <div class="cart-bar-content">
+                <div class="cart-info">
+                    <span class="cart-icon">🛒</span>
+                    <span id="cart-qty">0 itens</span>
+                    <span class="divider">|</span>
+                    <span id="cart-total-preview">R$ 0,00</span>
+                </div>
+                <button class="view-cart-btn" id="btn-view-cart">Ver Sacola</button>
+            </div>
+        </div>
+
+        <!-- Painel de Checkout / Sacola (Slide Up) -->
+        <div class="checkout-panel" id="checkout-panel">
+            <div class="checkout-container">
+                <header class="checkout-header">
+                    <h2>Sua Sacola</h2>
+                    <button class="close-btn" id="btn-close-checkout">×</button>
+                </header>
+
+                <div class="checkout-body">
+                    <!-- Lista de Itens -->
+                    <div class="order-items-list" id="order-items-list">
+                        <!-- Preenchido dinamicamente via JS -->
+                    </div>
+
+                    <!-- Resumo Financeiro -->
+                    <div class="price-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="summary-subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Taxa de Entrega:</span>
+                            <span>R$ 5,00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total a Pagar:</span>
+                            <span id="summary-total">R$ 5,00</span>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Entrega e Pagamento -->
+                    <form class="checkout-form" id="order-form">
+                        <h3>Dados de Entrega</h3>
+                        <div class="input-group">
+                            <label for="cust-name">Seu Nome *</label>
+                            <input type="text" id="cust-name" placeholder="Ex: João da Silva" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="cust-phone">WhatsApp para Contato *</label>
+                            <input type="tel" id="cust-phone" placeholder="Ex: 42 99999-9999" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="delivery-type">Tipo de Entrega *</label>
+                            <select id="delivery-type" required>
+                                <option value="delivery" selected>Delivery (Receber em Casa)</option>
+                                <option value="pickup">Retirar no Balcão (Sem taxa)</option>
+                            </select>
+                        </div>
+
+                        <div class="address-fields" id="address-fields">
+                            <div class="input-group">
+                                <label for="cust-address">Endereço Completo *</label>
+                                <div class="address-input-wrapper">
+                                    <input type="text" id="cust-address" placeholder="Rua, número, apartamento..." required>
+                                    <button type="button" class="gps-btn" id="btn-gps" title="Usar minha localização atual">📍 Usar GPS</button>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label for="cust-neighborhood">Bairro *</label>
+                                <input type="text" id="cust-neighborhood" placeholder="Ex: Centro" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="cust-reference">Ponto de Referência</label>
+                                <input type="text" id="cust-reference" placeholder="Ex: Próximo à farmácia...">
+                            </div>
+                        </div>
+
+                        <h3>Forma de Pagamento</h3>
+                        <div class="input-group">
+                            <label for="cust-payment">Selecione como quer pagar *</label>
+                            <select id="cust-payment" required>
+                                <option value="" disabled selected>Escolha a forma...</option>
+                                <option value="Pix">Pix (Pague e envie o comprovante)</option>
+                                <option value="Cartão de Crédito na Entrega">Cartão de Crédito na Entrega</option>
+                                <option value="Cartão de Débito na Entrega">Cartão de Débito na Entrega</option>
+                                <option value="Dinheiro">Dinheiro (Em espécie)</option>
+                            </select>
+                        </div>
+
+                        <div class="change-field" id="change-field" style="display: none;">
+                            <div class="input-group">
+                                <label for="cust-change">Troco para quanto?</label>
+                                <input type="number" id="cust-change" placeholder="Ex: 50" min="0" step="0.01">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-order-btn">
+                            <span>Confirmar e Enviar no WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Crédito Institucional TaOn -->
+        <div class="demo-credit">
+            <p>Demonstração criada por <strong>TaOn Digital</strong> • Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = [];
+            const cartBar = document.getElementById('cart-bar');
+            const cartQty = document.getElementById('cart-qty');
+            const cartTotalPreview = document.getElementById('cart-total-preview');
+            const btnViewCart = document.getElementById('btn-view-cart');
+            const checkoutPanel = document.getElementById('checkout-panel');
+            const btnCloseCheckout = document.getElementById('btn-close-checkout');
+            
+            const orderItemsList = document.getElementById('order-items-list');
+            const summarySubtotal = document.getElementById('summary-subtotal');
+            const summaryTotal = document.getElementById('summary-total');
+            const deliveryType = document.getElementById('delivery-type');
+            const addressFields = document.getElementById('address-fields');
+            const custAddress = document.getElementById('cust-address');
+            const custNeighborhood = document.getElementById('cust-neighborhood');
+            const custPayment = document.getElementById('cust-payment');
+            const changeField = document.getElementById('change-field');
+            const orderForm = document.getElementById('order-form');
+
+            // Controle de GPS
+            let gpsCoordinates = null;
+            const btnGps = document.getElementById('btn-gps');
+
+            if (btnGps) {
+                btnGps.addEventListener('click', () => {
+                    if (!navigator.geolocation) {
+                        alert("Geolocalização não é suportada pelo seu navegador.");
+                        return;
+                    }
+
+                    btnGps.textContent = "Buscando... ⏳";
+                    btnGps.disabled = true;
+
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            const lat = position.coords.latitude;
+                            const lon = position.coords.longitude;
+                            gpsCoordinates = { lat, lon };
+
+                            custAddress.value = `Localização via GPS (Link anexado no WhatsApp)`;
+                            custNeighborhood.value = `Detectado por GPS`;
+                            
+                            btnGps.textContent = "Capturado! ✓";
+                            btnGps.classList.add('success');
+                            btnGps.disabled = false;
+                        },
+                        (error) => {
+                            console.error(error);
+                            alert("Não foi possível obter sua localização. Por favor, digite seu endereço manualmente.");
+                            btnGps.textContent = "Erro ❌";
+                            btnGps.disabled = false;
+                        },
+                        { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 }
+                    );
+                });
+            }
+
+            // Toggle Tipo de Entrega
+            deliveryType.addEventListener('change', () => {
+                if (deliveryType.value === 'pickup') {
+                    addressFields.style.display = 'none';
+                    custAddress.removeAttribute('required');
+                    custNeighborhood.removeAttribute('required');
+                } else {
+                    addressFields.style.display = 'block';
+                    custAddress.setAttribute('required', '');
+                    custNeighborhood.setAttribute('required', '');
+                }
+                renderCheckout();
+            });
+
+            // Toggle Troco Dinheiro
+            custPayment.addEventListener('change', () => {
+                if (custPayment.value === 'Dinheiro') {
+                    changeField.style.display = 'block';
+                } else {
+                    changeField.style.display = 'none';
+                }
+            });
+
+            // Adicionar ao carrinho
+            document.querySelectorAll('.add-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const name = btn.getAttribute('data-name');
+                    const price = parseFloat(btn.getAttribute('data-price'));
+
+                    const existingItem = cart.find(item => item.name === name);
+                    if (existingItem) {
+                        existingItem.qty += 1;
+                    } else {
+                        cart.push({ name, price, qty: 1 });
+                    }
+
+                    btn.textContent = 'Adicionado! ✓';
+                    btn.classList.add('added');
+                    setTimeout(() => {
+                        btn.textContent = 'Adicionar';
+                        btn.classList.remove('added');
+                    }, 1000);
+
+                    updateCartPreview();
+                });
+            });
+
+            function updateCartPreview() {
+                const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+                const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+                if (totalQty > 0) {
+                    cartQty.textContent = `${totalQty} item(s)`;
+                    cartTotalPreview.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                    cartBar.classList.add('active');
+                } else {
+                    cartBar.classList.remove('active');
+                }
+            }
+
+            // Abrir e Fechar Sacola
+            btnViewCart.addEventListener('click', () => {
+                renderCheckout();
+                checkoutPanel.classList.add('active');
+            });
+
+            btnCloseCheckout.addEventListener('click', () => {
+                checkoutPanel.classList.remove('active');
+            });
+
+            function renderCheckout() {
+                orderItemsList.innerHTML = '';
+                let subtotal = 0;
+
+                cart.forEach((item, index) => {
+                    const totalItemPrice = item.price * item.qty;
+                    subtotal += totalItemPrice;
+
+                    const div = document.createElement('div');
+                    div.className = 'order-item-row';
+                    div.innerHTML = `
+                        <div class="item-name-qty">
+                            <span class="qty">${item.qty}x</span>
+                            <span class="name">${item.name}</span>
+                        </div>
+                        <div class="item-price-actions">
+                            <span class="price">R$ ${totalItemPrice.toFixed(2).replace('.', ',')}</span>
+                            <button type="button" class="remove-btn" data-index="${index}">×</button>
+                        </div>
+                    `;
+                    orderItemsList.appendChild(div);
+                });
+
+                const isDelivery = deliveryType.value === 'delivery';
+                const deliveryFee = isDelivery ? 5.00 : 0.00;
+                const total = subtotal + deliveryFee;
+
+                summarySubtotal.textContent = `R$ ${subtotal.toFixed(2).replace('.', ',')}`;
+                summaryTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+
+                // Configurar botões de remover item
+                document.querySelectorAll('.remove-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        cart.splice(idx, 1);
+                        renderCheckout();
+                        updateCartPreview();
+                        if (cart.length === 0) {
+                            checkoutPanel.classList.remove('active');
+                        }
+                    });
+                });
+            }
+
+            // Envio do Pedido via WhatsApp
+            orderForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('cust-name').value;
+                const phone = document.getElementById('cust-phone').value;
+                const isDelivery = deliveryType.value === 'delivery';
+                const payment = custPayment.value;
+
+                let itemsText = '';
+                let subtotal = 0;
+
+                cart.forEach(item => {
+                    const totalItemPrice = item.price * item.qty;
+                    subtotal += totalItemPrice;
+                    itemsText += `* ${item.qty}x ${item.name} - R$ ${totalItemPrice.toFixed(2).replace('.', ',')}\n`;
+                });
+
+                const deliveryFee = isDelivery ? 5.00 : 0.00;
+                const total = subtotal + deliveryFee;
+
+                let message = `🍔 *NOVO PEDIDO - TAON BURGUER* 🍔\n` +
+                                `----------------------------------\n` +
+                                `👤 *Cliente:* ${name} (${phone})\n` +
+                                `----------------------------------\n` +
+                                `🛒 *Itens do Pedido:*\n${itemsText}` +
+                                `💵 *Subtotal:* R$ ${subtotal.toFixed(2).replace('.', ',')}\n` +
+                                `🛵 *Taxa de Entrega:* R$ ${deliveryFee.toFixed(2).replace('.', ',')}\n` +
+                                `💰 *Total a Pagar:* R$ ${total.toFixed(2).replace('.', ',')}\n` +
+                                `----------------------------------\n` +
+                                `💳 *Forma de Pagamento:* ${payment}\n`;
+
+                if (payment === 'Pix') {
+                    message += `*(Anviarei o comprovante em seguida no chat)*\n`;
+                } else if (payment === 'Dinheiro') {
+                    const change = document.getElementById('cust-change').value;
+                    if (change) {
+                        message += `* *Troco para:* R$ ${parseFloat(change).toFixed(2).replace('.', ',')}\n`;
+                    }
+                }
+
+                message += `----------------------------------\n`;
+
+                if (isDelivery) {
+                    const address = custAddress.value;
+                    const neighborhood = custNeighborhood.value;
+                    const reference = document.getElementById('cust-reference').value;
+                    
+                    message += `📍 *Endereço de Entrega:* \n`;
+                    if (gpsCoordinates) {
+                        message += `* *Como chegar (GPS):* https://www.google.com/maps?q=${gpsCoordinates.lat},${gpsCoordinates.lon}\n`;
+                    } else {
+                        message += `* *Rua:* ${address}\n` +
+                                   `* *Bairro:* ${neighborhood}\n`;
+                    }
+                    if (reference) {
+                        message += `* *Referência:* ${reference}\n`;
+                    }
+                } else {
+                    message += `🏪 *Tipo:* Retirada no Balcão\n`;
+                }
+
+                message += `----------------------------------\n` +
+                           `🔗 _Pedido gerado pelo site TaOn Digital._`;
+
+                const whatsappUrl = `https://wa.me/5542999164041?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // Suporte a arrastar para rolar (drag-to-scroll) no computador
+            let isDown = false;
+            let startY;
+            let scrollTop;
+            window.addEventListener('mousedown', (e) => {
+                const tag = e.target.tagName.toLowerCase();
+                if (tag === 'input' || tag === 'button' || tag === 'select' || tag === 'option' || tag === 'a' || e.target.closest('button') || e.target.closest('a')) {
+                    return;
+                }
+                isDown = true;
+                startY = e.pageY;
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            });
+            window.addEventListener('mouseleave', () => { isDown = false; });
+            window.addEventListener('mouseup', () => { isDown = false; });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                const y = e.pageY;
+                const walk = (y - startY) * 1.5;
+                if (Math.abs(y - startY) > 5) {
+                    e.preventDefault();
+                    window.scrollTo(0, scrollTop - walk);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
